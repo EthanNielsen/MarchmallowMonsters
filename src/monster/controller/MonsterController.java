@@ -24,6 +24,7 @@ public class MonsterController
 		System.out.println(YeahBoi);
 		
 		interactWithMonster(YeahBoi);
+		
 	}
 	
 	private void interactWithMonster(MarshmallowMonster currentMonster)
