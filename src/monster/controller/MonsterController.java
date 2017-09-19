@@ -2,10 +2,20 @@ package monster.controller;
 
 import monster.model.MarshmallowMonster;
 import java.util.Scanner;
+import monster.view.MonsterDisplay;
+
+
 
 public class MonsterController
 {
-
+	private MonsterDisplay popup;
+	
+	public MonsterController()
+	{
+		popup = new MonsterDisplay();
+		popup.displayText("Hi There :L");
+	}
+	
 	public void start()
 	{
 		MarshmallowMonster basic = new MarshmallowMonster();
@@ -85,6 +95,7 @@ public class MonsterController
 			System.out.println("More likely");
 		}
 
+		popup.displayText("Hi there ready to play???");
 		myScanner.close();
 	}
 }
