@@ -35,7 +35,7 @@ public class MonsterController
 		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
 		System.out.println(currentMonster);
 		
-		System.out.println("How many arms are you interested in eating?" + currentMonster.getArmCount());
+		System.out.println("How many arms are you interested in eating? I currently have" + currentMonster.getArmCount());
 		//consumed = myScanner.nextInt();
 		int armEat = myScanner.nextInt();
 		
@@ -55,6 +55,24 @@ public class MonsterController
 		{
 			currentMonster.setArmCount(currentMonster.getArmCount() - armEat);
 			System.out.println("OK, now I have this many arms " + currentMonster.getArmCount());
+		}
+		
+		
+		System.out.println("Alright! Now how many tentacles do you want?");
+		int tentacleAmount = myScanner.nextInt();
+		
+		if(tentacleAmount == 0)	
+		{
+			System.out.println("Geez, did you eat dinner or something?");
+		}
+		else if(tentacleAmount > 2)
+		{
+			System.out.println("Alright, I need to keep 2 to walk with and I cannot give you a negative amount of tentacles.");
+		}
+		else
+		{
+			currentMonster.setTentacleAmount(currentMonster.getTentacleAmount() - tentacleAmount);
+			System.out.println("Alright I have this many tentacles left" + currentMonster.getTentacleAmount());
 		}
 		
 		
