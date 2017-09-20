@@ -97,5 +97,8 @@ public class MonsterController
 
 		popup.displayText("Hi there ready to play???");
 		myScanner.close();
+		String answer = popup.getResponse("What is the air speed of a coconut laden swallow?");
+		System.out.println(answer);
+		
 	}
 }
