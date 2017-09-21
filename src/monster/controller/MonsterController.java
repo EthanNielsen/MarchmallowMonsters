@@ -19,18 +19,18 @@ public class MonsterController
 	public void start()
 	{
 		MarshmallowMonster basic = new MarshmallowMonster();
-//		System.out.println(basic);
-// I many need to get rid of this comment //	popup.displayText(basic.toString());
+		System.out.println(basic);
+		popup.displayText(basic.toString());
 		MarshmallowMonster YeahBoi = new MarshmallowMonster("Weird YeahBoi Monster", 15, 4, 4.5, true);
 //		System.out.println(YeahBoi);
 		popup.displayText(YeahBoi.toString());
 //		System.out.println("I am feeling hungry, I am going to eat one of fred's arms");
-		popup.displayText("I am feeling hungry, I am going to eat one of fred's arms");
+		popup.displayText("I am feeling hungry, I am going to eat one of YeahBoi's arms");
 		YeahBoi.setArmCount(YeahBoi.getArmCount() - 3);
 //		System.out.println(YeahBoi);
 		popup.displayText(YeahBoi.toString());
 //		System.out.println("Hey I need more... Give Me MORE!");
-		popup.displayText("Hey I need more... Give Me MORE!");
+//		popup.displayText("Hey I need more... Give Me MORE!");
 		YeahBoi.setTentacleAmount(YeahBoi.getTentacleAmount() - 1);
 //		System.out.println(YeahBoi)
 //		System.out.println("Lets Eat!");
@@ -62,19 +62,20 @@ public class MonsterController
 		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
 		System.out.println(currentMonster);
 //		System.out.println("How many arms are you interested in eating? I currently have " + currentMonster.getArmCount());
-		popup.getResponse("How many arms are you interested in eating? I currently have " + currentMonster.getArmCount());
+		String respons = popup.getResponse(currentMonster.getName() + "wants to kno how many arms are you interested in eating? I currently have " + currentMonster.getArmCount());
 		
-		if(isValidInteger(response))
+		if(isValidInteger(respons))
 		{
-			consumed = Integer.parseInt(response);
+			consumed = Integer.parseInt(respons);
 		}
 		
 		// consumed = myScanner.nextInt();
-		int armEat = myScanner.nextInt();
+		int armEat = 0;
 
 		if (armEat == 0)
 		{
 //			System.out.println("Not hungry? Thank Goodness...");
+			popup.displayText("Not hungry? Thank Goodness...");
 		}
 		else if (armEat < 0)
 		{
@@ -95,7 +96,16 @@ public class MonsterController
 
 		System.out.println("Alright! Now how many tentacles do you want?");
 		int tentacleAmount = myScanner.nextInt();
-
+		
+		
+		double food = 0.0;
+		String tentacleResponse = popup.getResponse("");
+		if(isValidDouble(tentacleResponse))
+		{
+			food = Double.parseDouble(tentacleResponse);
+		}
+		
+		
 		if (tentacleAmount == 0)
 		{
 //			System.out.println("Geez, did you eat dinner or something?");
@@ -114,15 +124,16 @@ public class MonsterController
 		}
 		
 		System.out.println("How many eyes do you want to eat? I have " + currentMonster.getEyeCount());
-		double food = myScanner.nextDouble();
+//		double food = myScanner.nextDouble();
 		
 		if(food == currentMonster.getEyeCount())
 		{
-			System.out.println("you ate all my eyes!!!");
+//			System.out.println("you ate all my eyes!!!");
+			popup.displayText("you ate all my eyes!!!");
 		}
 		else
 		{
-			System.out.println("More likely");
+//		System.out.println("More likely");
 		}
 
 		popup.displayText("Hi there ready to play???");
@@ -130,6 +141,8 @@ public class MonsterController
 		String answer = popup.getResponse("What is the air speed of a coconut laden swallow?");
 		System.out.println(answer);
 		
+		
+		myScanner.close();
 	}
 	
 	
@@ -150,4 +163,40 @@ public class MonsterController
 		
 		return valid;
 	}	
+	
+	private boolean isValidDouble(String sampleDouble)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Double.parseDouble(sampleDouble);
+			valid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			popup.displayText("You neeed to type in a doulbe - " + sampleDouble + " is not a valid answer.");
+		}
+		
+		return valid;
+	}
+	
+	private boolean isValidBoolean(String sampleBoolean)
+	{
+		boolean valid = false;
+		
+		try
+		
+		{
+			Boolean.parseBoolean(sampleBoolean);
+			valid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			popup.displayText("Type in a boolean value" + sampleBoolean + " does not count.");
+		}
+		
+		return valid;
+	}
+	
 }
