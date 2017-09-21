@@ -19,13 +19,16 @@ public class MonsterController
 	public void start()
 	{
 		MarshmallowMonster basic = new MarshmallowMonster();
-		System.out.println(basic);
+//		System.out.println(basic);
 		popup.displayText(basic.toString());
 		MarshmallowMonster YeahBoi = new MarshmallowMonster("Weird YeahBoi Monster", 15, 4, 4.5, true);
-		System.out.println(YeahBoi);
-		System.out.println("I am feeling hungry, I am going to eat one of fred's arms");
+//		System.out.println(YeahBoi);
+		popup.displayText(YeahBoi.toString());
+//		System.out.println("I am feeling hungry, I am going to eat one of fred's arms");
+		popup.displayText("I am feeling hungry, I am going to eat one of fred's arms");
 		YeahBoi.setArmCount(YeahBoi.getArmCount() - 3);
-		System.out.println(YeahBoi);
+//		System.out.println(YeahBoi);
+		popup.displayText(YeahBoi.toString());
 		System.out.println("Hey I need more... Give Me MORE!");
 		YeahBoi.setTentacleAmount(YeahBoi.getTentacleAmount() - 1);
 		System.out.println(YeahBoi);
