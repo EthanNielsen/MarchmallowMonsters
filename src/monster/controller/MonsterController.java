@@ -58,6 +58,8 @@ public class MonsterController
 			consumed = Integer.parseInt(response);
 		}
 		
+//		I have no idea what's going on with the code underneath this comment :L
+		
 		int armEat = 0;  // myScanner.nextInt();
 //		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
 //		System.out.println(currentMonster);
