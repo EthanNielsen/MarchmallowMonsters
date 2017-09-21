@@ -29,8 +29,8 @@ public class MonsterController
 		YeahBoi.setArmCount(YeahBoi.getArmCount() - 3);
 //		System.out.println(YeahBoi);
 		popup.displayText(YeahBoi.toString());
-//		System.out.println("Hey I need more... Give Me MORE!");
-//		popup.displayText("Hey I need more... Give Me MORE!");
+//		System.out.println("Hey I need more... Give Me MORE!"); <---- This is just extra stuff I don't want
+//		popup.displayText("Hey I need more... Give Me MORE!");  <----
 		YeahBoi.setTentacleAmount(YeahBoi.getTentacleAmount() - 1);
 //		System.out.println(YeahBoi)
 //		System.out.println("Lets Eat!");
@@ -58,19 +58,20 @@ public class MonsterController
 			consumed = Integer.parseInt(response);
 		}
 		
-		//		int consumed = myScanner.nextInt();
-		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
-		System.out.println(currentMonster);
+		int armEat = 0;  // myScanner.nextInt();
+//		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
+//		System.out.println(currentMonster);
 //		System.out.println("How many arms are you interested in eating? I currently have " + currentMonster.getArmCount());
-		String respons = popup.getResponse(currentMonster.getName() + "wants to kno how many arms are you interested in eating? I currently have " + currentMonster.getArmCount());
+		consumed = 0;
+		String armResponse = popup.getResponse(currentMonster.getName() + "wants to kno how many arms are you interested in eating? I currently have " + currentMonster.getArmCount());
 		
-		if(isValidInteger(respons))
-		{
-			consumed = Integer.parseInt(respons);
+		// I don't think I needed to add this //
+		if(isValidInteger(armResponse))
+		{			
+			consumed = Integer.parseInt(armResponse);
 		}
-		
-		// consumed = myScanner.nextInt();
-		int armEat = 0;
+		// ----------------------------------- //
+		consumed = myScanner.nextInt();
 
 		if (armEat == 0)
 		{
