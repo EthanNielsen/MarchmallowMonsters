@@ -44,10 +44,14 @@ public class MonsterController
 	{
 		Scanner myScanner = new Scanner(System.in);
 		System.out.println(currentMonster.getName() + " wants to know how many eyes you want to eat, please type in how many");
-		int consumed = myScanner.nextInt();
+		int consumed;
+		String response = popup.getResponse(currentMonster.getName() + " wants to know how many eyes you want to eat");
+		
+		consumed = Integer.parseInt(response);
+		
+		//		int consumed = myScanner.nextInt();
 		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
 		System.out.println(currentMonster);
-
 		System.out.println("How many arms are you interested in eating? I currently have " + currentMonster.getArmCount());
 		// consumed = myScanner.nextInt();
 		int armEat = myScanner.nextInt();
