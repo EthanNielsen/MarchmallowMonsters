@@ -66,10 +66,16 @@ public class MonsterController
 		int consumed = 0;
 		String response = popup.getResponse(currentMonster.getName() + " wants to know how many eyes you want to eat");
 		
-		if(isValidInteger(response))
+		while(!isValidInteger(response))
 		{
-			consumed = Integer.parseInt(response);
-		}
+			popup.displayText("grrr type in a betteer answer next time");
+			response = popup.getResponse("Type in a integer value!");
+		}	
+		
+//		if(isValidInteger(response))
+//		{
+//			consumed = Integer.parseInt(response);
+//		}
 		
 //		I have no idea what's going on with the code underneath this comment :L
 		
