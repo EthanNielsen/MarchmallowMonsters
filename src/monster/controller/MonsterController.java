@@ -22,6 +22,7 @@ public class MonsterController
 		while(count < 10)
 		{
 			popup.displayText("Am I not the coolest??!");
+			count +=2;
 		}
 		
 		
