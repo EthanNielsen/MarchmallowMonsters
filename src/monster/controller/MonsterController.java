@@ -72,7 +72,7 @@ public class MonsterController
 			currentMonster.setName(updateName);
 			popup.displayText("My new name is " + currentMonster.getName());
 		}
-		
+		 
 		for (MarshmallowMonster current : monsterList)
 		{
 			popup.displayText("My name is " + current.getName());
