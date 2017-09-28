@@ -161,16 +161,16 @@ public class MonsterController
 		
 		System.out.println("How many eyes do you want to eat? I have " + currentMonster.getEyeCount());
 //		double food = myScanner.nextDouble();
-		
+		double food;
 //		if(food == currentMonster.getEyeCount())
-		{
+//		{
 //			System.out.println("you ate all my eyes!!!");
 //			popup.displayText("you ate all my eyes!!!");
-		}
+//		}
 //		else
-		{
+//		{
 //		System.out.println("More likely");
-		}
+//		}
 
 		popup.displayText("Hi there ready to play???");
 		myScanner.close();
